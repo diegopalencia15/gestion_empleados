@@ -1,0 +1,28 @@
+<form action="{% url 'crear_puesto' %}" method="get">
+  <div>
+    <div>
+      <label for="cargo">Nombre de puesto de trabajo</label>
+    </div>
+    <input type="text" name="cargo" id="cargo">
+  </div>
+  <br>
+  <div>
+    <div>
+      <label for="descripcion">Descripcion del puesto de trabajo</label>
+    </div>
+    <textarea name="descripcion" id="" cols="30" rows="10"></textarea>
+  </div>
+  <br>
+  <div>
+    <div>
+      <label for="salario">Salarios</label>
+    </div>
+    <select name="salario" id="salario">
+      {% for salario in salario %}
+      <option value="{{salario.id}}">{{salario.valor}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <br>
+  <button type="submit">Crear Puesto</button>
+</form>
